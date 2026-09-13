@@ -22,11 +22,6 @@ With a 231:1 imbalance, accuracy is not a meaningful metric — a model that alw
 
 **Results (XGBoost, best-performing model):**
 
-| Metric | Full feature set | Without velocity features |
-|---|---|---|
-| Macro AUC | 0.9985 | 0.9994 |
-| Macro F1 | 0.5204 | 0.5455 |
-
 ## Key Finding: Ablation Study
 Removing the engineered velocity features (expanding mean/std, transaction count, category/merchant diversity, implied travel speed) **slightly improved** both macro AUC and macro F1, rather than degrading them. This suggests the velocity features were largely **redundant** with simpler signals already available to the model (transaction amount, hour, geographic distance) — a useful negative result that shaped how the features are described here, rather than being reported as unqualified improvements.
 
